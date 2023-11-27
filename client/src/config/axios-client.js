@@ -3,8 +3,8 @@ import { toast } from "react-toastify";
 
 import { removeSession } from "../utils/helper";
 
-const baseURL = "https://mern-placement-cell-backend.vercel.app/";
-// const baseURL = "http://localhost:3500/";
+// const baseURL = "https://mern-placement-cell-backend.vercel.app/";
+const baseURL = "http://localhost:3000/";
 
 const axiosClient = axios.create({
   baseURL,
@@ -13,13 +13,14 @@ const axiosClient = axios.create({
 axiosClient.interceptors.request.use(
   function (config) {
     const session = JSON.parse(localStorage.getItem("session")) || {};
-    const accessToken = session.token;
+    const accessToken = session.token ?? session.accessToken;
 
     return {
       ...config,
       headers: {
         ...config.headers,
-        ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
+        // ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
+        ...(accessToken ? { 'x-access-token': `${accessToken}` } : {}),
       },
     };
   },

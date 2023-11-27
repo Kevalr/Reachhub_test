@@ -1,6 +1,7 @@
 export const isLoggedIn = () => {
   const session = JSON.parse(localStorage.getItem("session")) || {};
-  return session?.token;
+  console.log(session, "check");
+  return session?.accessToken ?? session?.token;
 };
 
 export const setSession = (data) => {

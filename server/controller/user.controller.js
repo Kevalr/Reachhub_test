@@ -3,18 +3,20 @@ const accessToken = 'lip_sGErgcLJprR9uKPB5Xgw';
 
 exports.topPlayersList = async(req, res) => {
   try {
+    console.log("fetching list")
     const response = await axios.get('https://lichess.org/api/player/top/50/classical', {
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        // Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer lip_sGErgcLJprR9uKPB5Xgw`,
       },
     });
-
+    console.log("==== resp ======", response);
     // Access the response data
     const responseData = response.data;
     res.status(200).json(responseData);
   } catch (error) {
     console.error('Error fetching data:', error.message);
-    res.status(403).json({msg: "Error while fetching top 50 player list"})
+    res.status(500).json({msg: "Error while fetching top 50 player list"})
   }
 };
 

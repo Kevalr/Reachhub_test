@@ -4,6 +4,7 @@ const config = require("../config/auth.config.js");
 // const User = db.user;
 
 verifyToken = (req, res, next) => {
+  console.log("verifying toekn")
   let token = req.headers["x-access-token"];
 
   if (!token) {
@@ -19,6 +20,7 @@ verifyToken = (req, res, next) => {
       });
     }
     req.userId = decoded.id;
+    console.log("token verified")
     next();
   });
 };

@@ -54,7 +54,7 @@ const Login = () => {
       onSuccess: (response) => {
         toast.success("User Login Succssfull");
         console.log(userData, response);
-        setSession(response.data);
+        setSession(response);
         navigate("/playerlist");
       },
     });

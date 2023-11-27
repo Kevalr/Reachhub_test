@@ -7,7 +7,7 @@ module.exports = {
     pool: {
       max: 5,
       min: 0,
-      acquire: 30000,
+      acquire: 3000000,
       idle: 10000
     }
   };

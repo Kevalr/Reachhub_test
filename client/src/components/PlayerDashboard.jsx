@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Loader from "../components/common/Loader";
 import { useNavigate } from "react-router-dom";
-import {  useGetAllStudents } from "../hooks/students";
+import {  useGetTop50PlayersList } from "../hooks/lichessTask";
 
 const PlayerDashboard = () => {
   const navigate = useNavigate();
-  var { data: studentsList, isLoading } = useGetAllStudents();
+  const { data: playersList, isLoading } = useGetTop50PlayersList();
 
    const PlayerData = [
     { playername: "Vatsal", playerrating: 100,country:"india",since:2002, rankHistory: [
@@ -38,7 +38,7 @@ const PlayerDashboard = () => {
   ];
 
   
-  PlayerData && console.log(PlayerData.data);
+  playersList && console.log(playersList , "====== test =====");
   if (isLoading) return <Loader />;
 
   if (!PlayerData) return;

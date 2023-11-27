@@ -7,11 +7,11 @@ import { data } from "../constants/playersData";
 
 const PlayerDashboard = () => {
   const navigate = useNavigate();
-  const { data: playersList, isLoading } = useGetTop50PlayersList();
+  // const { data: playersList, isLoading } = useGetTop50PlayersList();
 
    const PlayerData = data.PlayerData;
 
-  playersList && console.log(playersList);
+  // playersList && console.log(playersList);
   // if (isLoading) return <Loader />;
 
   if (!PlayerData) return;

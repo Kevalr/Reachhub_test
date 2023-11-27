@@ -1,0 +1,24 @@
+# Client
+client/node_modules/
+
+# Server
+server/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+.pnpm
+.pnpm-debug
+pnpm-debug.log
+
+# dotenv environment variables file
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db

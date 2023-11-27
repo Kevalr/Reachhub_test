@@ -11,12 +11,12 @@ const Header = () => {
     removeSession();
     navigate(Path.Login);
   };
-
+  
   setTimeout(() => {}, 3000);
 
   return (
     <>
-      <header className="items-center fixed h-20 bg-blue-300 px-5 py-4 flex w-[calc(100%_-_8rem)] z-20">
+      <header className="items-center fixed h-20 bg-blue-300 px-5 py-4 flex w-full z-20">
         <div className="w-2/5 flex items-center">
           <p className="text-2xl font-semibold text-black-light">
             ReachHUB Interview Test

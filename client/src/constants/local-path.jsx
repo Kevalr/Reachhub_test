@@ -10,7 +10,7 @@ const PathAuth = {
 
 const PathDashboard = {
   PlayerTable:"/playerlist",
-  PlayerState:"/playerstats/:playername/:playerrating/:country/:since/:rankHistory/:index",
+  PlayerState:"/playerstats/:id",
 };
 
 const Path = {
